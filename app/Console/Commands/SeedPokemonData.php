@@ -22,5 +22,7 @@ class SeedPokemonData extends Command
 
             $url = $response['next'];
         }
+
+        $this->info('done!');
     }
 }

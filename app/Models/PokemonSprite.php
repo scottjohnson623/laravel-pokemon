@@ -3,16 +3,22 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Enums\SpriteType;
 
 /** 
  * @property int $id
- * @property string $name
+ * @property SpriteType $sprite_type
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  */
-class Pokemon extends Model
+class PokemonSprite extends Model
 {
     protected $fillable = [
-        'name',
+        'type',
+        'url',
+    ];
+
+    protected $casts = [
+        'type' => SpriteType::class,
     ];
 }
